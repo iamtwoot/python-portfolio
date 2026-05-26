@@ -15,7 +15,7 @@ class Converter:
                 try:
                     encoded.append(self.morse_code[char.upper()])
                 except KeyError:
-                    raise ValueError(f"Unsupported character {char}")
+                    raise ValueError(f"Unsupported character: '{char}'")
         else:
             encoded = [self.morse_code.get(char.upper(), char) for char in text]
         return " ".join(encoded)
@@ -28,7 +28,7 @@ class Converter:
                 try:
                     decoded.append(self.text_code[code])
                 except KeyError:
-                    raise ValueError(f"Unsupported character {code}")
+                    raise ValueError(f"Unsupported morse code: '{code}'")
         else:
             decoded = [self.text_code.get(code, code) for code in text.split()]
         return "".join(decoded)
