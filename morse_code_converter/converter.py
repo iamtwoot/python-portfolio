@@ -13,7 +13,7 @@ class Converter:
             encoded = []
             for char in text:
                 try:
-                    encoded.append(self.morse_code[char])
+                    encoded.append(self.morse_code[char.upper()])
                 except KeyError:
                     raise ValueError(f"Unsupported character {char}")
         else:
@@ -24,7 +24,7 @@ class Converter:
         """Convert Morse code to plain text."""
         if self.strict:
             decoded = []
-            for code in text:
+            for code in text.split():
                 try:
                     decoded.append(self.text_code[code])
                 except KeyError:
