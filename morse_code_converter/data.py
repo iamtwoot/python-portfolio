@@ -43,3 +43,5 @@ MORSE_CODE = {
     "!": "-.-.--",
     " ": "/"
 }
+
+TEXT_CODE = {v: k for k, v in MORSE_CODE.items()}
